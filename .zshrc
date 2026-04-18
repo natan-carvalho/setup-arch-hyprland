@@ -32,6 +32,17 @@ wifi(){
   nmcli dev wifi connect "$1" password "$2"
 }
 
+# Git add, commit and push
+gacp() {
+  if [ -z "$1" ]; then
+    echo "Usage: gacp <commit message>"
+    return 1
+  fi
+  git add .
+  git commit -m "$1"
+  git push
+}
+
 # Plugins
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
