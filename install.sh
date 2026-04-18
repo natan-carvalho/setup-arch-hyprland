@@ -12,7 +12,9 @@ if command -v git >/dev/null 2>&1; then
   sudo pacman -S --needed git
 fi
 
-git clone https://aur.archlinux.org/yay.git ~
+sudo pacman -S --needed base-devel
+
+git clone https://aur.archlinux.org/yay.git ~/yay
 cd ~/yay
 makepkg -si --noconfirm
 
@@ -27,7 +29,6 @@ packages=(
   wofi
   eog
   vlc
-  base-devel
   zsh
   starship
   fzf
@@ -63,23 +64,20 @@ packages=(
 # sudo pacman -Syu --needed "${packages[@]}"
 yay -S --needed --noconfirm "${packages[@]}"
 
-echo "Instalação dos pacotes concluída!"
-echo "Escolha sua fonte do terminal"
-kitten choose-font
-starship preset nerd-font-symbols -o "$CONFIG/starship.toml"
-
 echo "Configurações do sistema e do usuário"
 sudo systemctl enable --now docker
 sudo usermod -aG docker "$USER"
 
 mkdir -p "$CONFIG/hypr" "$CONFIG/waybar"
 
-cp "$REPO_ROOT/hypr/hyprpaper.conf" "$CONFIG/hypr/hyprpaper.conf"
-
+ln -sf "$REPO_ROOT/hypr/hyprpaper.conf" "$CONFIG/hypr/hyprpaper.conf"
 ln -sf "$REPO_ROOT/hypr/hyprland.conf" "$CONFIG/hypr/hyprland.conf"
 ln -sf "$REPO_ROOT/waybar/config.jsonc" "$CONFIG/waybar/config.json"
 ln -sf "$REPO_ROOT/waybar/style.css" "$CONFIG/waybar/style.css"
 ln -sf "$REPO_ROOT/.zshrc" "$HOME/.zshrc"
+ln -sf "$REPO_ROOT/starship.toml" "$CONFIG/starship.toml"
+ln -sf "$REPO_ROOT/kitty/kitty.conf" "$CONFIG/kitty/kitty.conf"
+ln -sf "$REPO_ROOT/kitty/current-theme.conf" "$CONFIG/kitty/current-theme.conf"
 
 # Se precisar rodar configurações extra do GTK/Qt:
 gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"
