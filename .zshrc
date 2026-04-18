@@ -8,7 +8,6 @@ bindkey "^[[1;5D" backward-word # CTRL + <-, para movimentar para a esquerda
 bindkey "^[[1;5C" forward-word # CTRL + ->, para a direita
 
 # Alias
-alias wifihome='nmcli dev wifi connect wylly password "STC4H7osW*dG"'
 alias update='sudo pacman -Syu'
 
 # Functions
