@@ -10,6 +10,7 @@ bindkey "^[[1;5C" forward-word # CTRL + ->, para a direita
 # Alias
 alias wifihome='nmcli dev wifi connect wylly password "STC4H7osW*dG"'
 alias update='sudo pacman -Syu'
+alias v='nvim'
 
 # Functions
 # Connect Wifi
