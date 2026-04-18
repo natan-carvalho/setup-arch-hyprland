@@ -70,14 +70,14 @@ sudo usermod -aG docker "$USER"
 
 mkdir -p "$CONFIG/hypr" "$CONFIG/waybar"
 
-ln -sf "/home/natan/setup-arch-hyprland/hypr/hyprpaper.conf" "$HOME/.config/hypr/hyprpaper.conf"
-ln -sf "/home/natan/setup-arch-hypr/hypr/hyprland.conf" "$HOME/.config/hypr/hyprland.conf"
-ln -sf "./waybar/config.jsonc" "$HOME/.config/waybar/config.jsonc"
-ln -sf "./waybar/style.css" "$HOME/.config/waybar/style.css"
-ln -sf "./.zshrc" "$HOME/.zshrc"
-ln -sf "./starship.toml" "$HOME/.config/starship.toml"
-ln -sf "./kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-ln -sf "./kitty/current-theme.conf" "$HOME/.config/kitty/current-theme.conf"
+ln -sf "$REPO_ROOT/hypr/hyprpaper.conf" "$CONFIG/hypr/hyprpaper.conf"
+ln -sf "$REPO_ROOT/hypr/hyprland.conf" "$CONFIG/hypr/hyprland.conf"
+ln -sf "$REPO_ROOT/waybar/config.jsonc" "$CONFIG/waybar/config.jsonc"
+ln -sf "$REPO_ROOT/waybar/style.css" "$CONFIG/waybar/style.css"
+ln -sf "$REPO_ROOT/.zshrc" "$HOME/.zshrc"
+ln -sf "$REPO_ROOT/starship.toml" "$CONFIG/starship.toml"
+ln -sf "$REPO_ROOT/kitty/kitty.conf" "$CONFIG/kitty/kitty.conf"
+ln -sf "$REPO_ROOT/kitty/current-theme.conf" "$CONFIG/kitty/current-theme.conf"
 
 # Se precisar rodar configurações extra do GTK/Qt:
 gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"
