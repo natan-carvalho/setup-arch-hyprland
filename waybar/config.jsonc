@@ -85,7 +85,7 @@
     "controller": "controller1"
   },
   "battery": {
-    "bat": "BAT2",
+    "bat": "0",
     "interval": 60,
     "states": {
       "warning": 30,

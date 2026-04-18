@@ -15,8 +15,18 @@ alias v='nvim'
 # Connect Wifi
 wifi(){
   if [ -z "$1" ]; then
-    echo "Usage: wifi <name> <password>"
+    echo "  Usage: wifi [options]"
+    echo "    wifi <name> <password>"
+    echo "    "
+    echo "    Options:"
+    echo "      -l, --list  List all available networks"
     return 1
+  fi
+
+  # list all wifi
+  if [ $1 = "-l" ] || [ $1 = "--list" ]; then
+    nmcli -f IN-USE,SSID,SIGNAL dev wifi list
+    return 0
   fi
 
   nmcli dev wifi connect "$1" password "$2"

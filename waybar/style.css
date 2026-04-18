@@ -39,6 +39,7 @@ window#waybar {
   border-radius: 0;
   color: @sapphire;
   padding: 2px 12px;
+  margin: 0 2px;
   /* background-color: transparent; */
   transition: 0.3s all;
 }
