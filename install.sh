@@ -59,8 +59,11 @@ packages=(
   kvantum
   breeze-icons
   pavucontrol
+  bluez-utils
+  networkmanager
+  nm-connection-editor
 )
-
+sudo systemctl enable --now NetworkManager
 # sudo pacman -Syu --needed "${packages[@]}"
 yay -S --needed --noconfirm "${packages[@]}"
 
@@ -69,6 +72,7 @@ sudo systemctl enable --now docker
 sudo usermod -aG docker "$USER"
 
 mkdir -p "$CONFIG/hypr" "$CONFIG/waybar"
+mkdir -p "$CONFIG/waybar/scripts"
 
 ln -sf "$REPO_ROOT/hypr/hyprpaper.conf" "$CONFIG/hypr/hyprpaper.conf"
 ln -sf "$REPO_ROOT/hypr/hyprland.conf" "$CONFIG/hypr/hyprland.conf"
@@ -78,6 +82,11 @@ ln -sf "$REPO_ROOT/.zshrc" "$HOME/.zshrc"
 ln -sf "$REPO_ROOT/starship.toml" "$CONFIG/starship.toml"
 ln -sf "$REPO_ROOT/kitty/kitty.conf" "$CONFIG/kitty/kitty.conf"
 ln -sf "$REPO_ROOT/kitty/current-theme.conf" "$CONFIG/kitty/current-theme.conf"
+ln -sf "$REPO_ROOT/waybar/scripts/wifi.sh" "$CONFIG/waybar/scripts/wifi.sh"
+ln -sf "$REPO_ROOT/waybar/scripts/wifi-status.sh" "$CONFIG/waybar/scripts/wifi-status.sh"
+
+chmod +x "$CONFIG/waybar/scripts/wifi.sh"
+chmod +x "$CONFIG/waybar/scripts/wifi-status.sh"
 
 # Se precisar rodar configurações extra do GTK/Qt:
 gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"

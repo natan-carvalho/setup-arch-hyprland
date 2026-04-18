@@ -1,96 +1,77 @@
 {
-  // Waybar at top layer
   "layer": "top",
-  "reload_on_style_change": true,
-  // Waybar position (top|bottom|left|right)
   "position": "top",
-  // Waybar height (to be removed for auto height)
-  "height": 5,
-  "passthrough": false,
-  "reload_style_on_change": true,
-  // Gaps between modules (4px)
-  "spacing": 10,
-  // Gap from the top of the screen
-  "margin-top": 5,
-  "margin-left": 0,
-  "margin-right": 0,
-  "margin-bottom": 1,
-  // Choose the order of the modules
+  "height": 36,
+  "spacing": 6,
   "modules-left": [
-    "custom/icon",
+    "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "clock"
   ],
   "modules-right": [
     "pulseaudio",
+    "network",
+    // "cpu",
+    // "custom/wifi",
+    // "memory",
     "battery",
-    "tray",
-    "clock"
+    "tray"
   ],
-  "custom/icon": {
-    "format": "󰣇"
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
   },
   "hyprland/window": {
-    "separate-outputs": true,
-    //"max-length": 20,
-    "format": "{class}",
-    "rewrite": {
-      // if any window is focused display Finder
-      "": "Kel'thuzad",
-      "kitty": "Kel'thuzad",
-      "vesktop": "Discord",
-      "zen": "Browser"
-    }
-  },
-  // Per-module config
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "on-click": "activate",
-    "format": "{icon}",
-    // "format-icons": {
-    //   "1": "i",
-    //   "2": "ii",
-    //   "3": "iii",
-    //   "4": "iv",
-    //   "5": "v",
-    //   "6": "i",
-    //   "7": "ii",
-    //   "8": "iii",
-    //   "9": "iv",
-    //   "10": "v"
-    // }
-  },
-  "tray": {
-    "icon-size": 16,
-    "spacing": 5,
-    "show-passive-items": true
+    "format": "{}",
+    "max-length": 40
   },
   "clock": {
-    "format": "<span></span>  {:%H:%M}",
-    "interval": 1,
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "calendar": {
-      "format": {
-        "today": "<span color='#eed49f'><b>{}</b></span>"
-      }
-    },
-    "actions": {
-      "on-click-right": "shift_down",
-      "on-click": "shift_up"
-    }
+    "format": "  {:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
   },
-  "bluetooth": {
-    "controller": "controller1"
+  // "cpu": {
+  //   "format": " {usage}%",
+  //   "interval": 2
+  // },
+  // "memory": {
+  //   "format": " {percentage}%",
+  //   "interval": 5
+  // },
+  "network": {
+    "interval": 3,
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀 Conectado",
+    "format-disconnected": "⚠ Offline",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "on-click": "nm-connection-editor",
+    "on-click-right": "~/.config/waybar/scripts/wifi.sh"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " muted",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
   "battery": {
-    "bat": "0",
-    "interval": 60,
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
     "format": "{capacity}% {icon}",
     "format-icons": [
       "",
@@ -98,7 +79,19 @@
       "",
       "",
       ""
-    ],
-    "max-length": 25
+    ]
+  },
+  "tray": {
+    "spacing": 10
   }
+  // "custom/wifi": {
+  //   "exec": "~/.config/waybar/scripts/wifi-status.sh",
+  //   "interval": 3,
+  //   "format": "{}",
+  //   // "format": "  {ssid}",
+  //   "format-ethernet": "󰈀 Wired",
+  //   "format-disconnected": "⚠ Offline",
+  //   "on-click": "~/.config/waybar/scripts/wifi.sh",
+  //   "tooltip": false
+  // }
 }

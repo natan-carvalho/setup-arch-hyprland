@@ -1,123 +1,52 @@
-@define-color rosewater #f4dbd6;
-@define-color flamingo #f0c6c6;
-@define-color pink #f5bde6;
-@define-color mauve #c6a0f6;
-@define-color red #ed8796;
-@define-color maroon #ee99a0;
-@define-color peach #f5a97f;
-@define-color yellow #eed49f;
-@define-color green #a6da95;
-@define-color teal #8bd5ca;
-@define-color sky #91d7e3;
-@define-color sapphire #7dc4e4;
-@define-color blue #8aadf4;
-@define-color lavender #b7bdf8;
-@define-color text #cad3f5;
-@define-color subtext1 #b8c0e0;
-@define-color subtext0 #a5adcb;
-@define-color overlay2 #939ab7;
-@define-color overlay1 #8087a2;
-@define-color overlay0 #6e738d;
-@define-color surface2 #5b6078;
-@define-color surface1 #494d64;
-@define-color surface0 #363a4f;
-@define-color base #24273a;
-@define-color mantle #1e2030;
-@define-color crust #181926;
-
 * {
-  font-family: "JetBrains Mono Nerd", monospace;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 13px;
   border: none;
-  min-height: 0;
+  border-radius: 10px;
 }
 
 window#waybar {
-  /* border: 1px solid alpha(@blue, 0.85); */
-  /* background-color: alpha(@base, 0.75); */
-  /* border-radius: 0 0 0.2rem 0.2rem; */
-  background-color: transparent;
-  border-radius: 0;
-  color: @sapphire;
-  padding: 2px 12px;
-  margin: 0 2px;
-  /* background-color: transparent; */
-  transition: 0.3s all;
+  background: rgba(20, 20, 30, 0.6);
+  /* backdrop-filter: blur(10px); */
+  color: #ffffff;
 }
 
-.modules-left,
-.modules-center,
-.modules-right {
-  /* border: 2px solid alpha(@blue, 0.85); */
-  /* background-color: alpha(@base, 0.75); */
-  /* border-radius: 8px;
-  padding: 2px 12px; */
-  padding: 0 1rem;
-  color: @sapphire;
-  border: none;
-  border-radius: 15;
-  background-color: @crust;
-}
-
-.modules-center {
-  padding: 5px;
-}
-
-#custom-icon {
-  font-size: 15px;
-  padding-right: 5px;
-}
-
-#window {
-  font-weight: bold;
-  color: @sky;
-  transition: all 0.3s ease;
-}
-
-#workspaces {
-  font-weight: bold;
-  font-size: 12px;
-  border: none;
-}
-
+/* Workspaces */
 #workspaces button {
-  color: @sapphire;
-  border-radius: 15;
-  transition: 0.2s ease-out;
-  /* border-bottom: 1px solid transparent; */
-}
-
-#workspaces button:first-child {
-  /* border-bottom-left-radius: 4px; */
-}
-
-#workspaces button:last-child {
-  /* border-bottom-right-radius: 4px; */
-}
-
-#workspaces button.urgent {
-  border-bottom: 1px solid @blue;
+  padding: 4px 10px;
+  margin: 3px;
+  background: transparent;
+  color: #aaa;
+  border-radius: 8px;
 }
 
 #workspaces button.active {
-  /* border-bottom: 1px solid @yellow; */
-  background-color: @surface0;
-  color: @yellow;
+  background: #89b4fa;
+  color: #1e1e2e;
 }
+
 #workspaces button:hover {
-  /* border-bottom: 1px solid @yellow; */
-  /* background-color: @surface0; */
-  color: @yellow;
+  background: #313244;
+  color: white;
 }
 
-#tray {
-  color: @sapphire;
+/* Window title */
+#window {
+  color: #cdd6f4;
 }
 
+/* Clock */
 #clock {
-  transition: all 0.3s ease;
-  font-weight: bold;
+  background: #89b4fa;
+  color: #1e1e2e;
+  padding: 5px 12px;
+  border-radius: 10px;
 }
 
-#clock:hover {
-  color: @yellow;
+/* Right modules */
+#cpu, #memory, #network, #pulseaudio, #battery, #custom-wifi, #custom-audio {
+  background: #1e1e2e;
+  padding: 5px 10px;
+  margin: 3px;
+  border-radius: 10px;
 }
