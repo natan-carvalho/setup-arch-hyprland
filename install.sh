@@ -72,7 +72,7 @@ mkdir -p "$CONFIG/hypr" "$CONFIG/waybar"
 
 ln -sf "$REPO_ROOT/hypr/hyprpaper.conf" "$CONFIG/hypr/hyprpaper.conf"
 ln -sf "$REPO_ROOT/hypr/hyprland.conf" "$CONFIG/hypr/hyprland.conf"
-ln -sf "$REPO_ROOT/waybar/config.jsonc" "$CONFIG/waybar/config.json"
+ln -sf "$REPO_ROOT/waybar/config.jsonc" "$CONFIG/waybar/config.jsonc"
 ln -sf "$REPO_ROOT/waybar/style.css" "$CONFIG/waybar/style.css"
 ln -sf "$REPO_ROOT/.zshrc" "$HOME/.zshrc"
 ln -sf "$REPO_ROOT/starship.toml" "$CONFIG/starship.toml"
