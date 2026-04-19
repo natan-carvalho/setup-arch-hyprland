@@ -75,6 +75,7 @@ sudo usermod -aG docker "$USER"
 
 mkdir -p "$CONFIG/hypr" "$CONFIG/waybar"
 mkdir -p "$CONFIG/waybar/scripts"
+mkdir -p "$CONFIG/wofi"
 
 ln -sf "$REPO_ROOT/hypr/hyprpaper.conf" "$CONFIG/hypr/hyprpaper.conf"
 ln -sf "$REPO_ROOT/hypr/hyprland.conf" "$CONFIG/hypr/hyprland.conf"
