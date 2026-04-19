@@ -1,52 +1,56 @@
 * {
-  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-family: JetBrainsMono Nerd Font;
   font-size: 13px;
   border: none;
-  border-radius: 10px;
 }
 
 window#waybar {
-  background: rgba(20, 20, 30, 0.6);
-  /* backdrop-filter: blur(10px); */
-  color: #ffffff;
+  background: rgba(20, 20, 20, 0.6);
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-/* Workspaces */
-#workspaces button {
-  padding: 4px 10px;
-  margin: 3px;
-  background: transparent;
-  color: #aaa;
-  border-radius: 8px;
+/* módulos gerais */
+#workspaces,
+#clock,
+#network,
+#pulseaudio,
+#cpu,
+#memory,
+#battery,
+#custom-spotify {
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 10px;
+  background: rgba(40, 40, 40, 0.6);
+  transition: all 0.25s ease;
 }
 
+/* hover animação */
+#workspaces button:hover,
+#network:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#custom-spotify:hover {
+  background: rgba(80, 80, 80, 0.8);
+  /* transform: scale(1.05); */
+}
+
+/* workspace ativo */
 #workspaces button.active {
   background: #89b4fa;
   color: #1e1e2e;
 }
 
-#workspaces button:hover {
-  background: #313244;
-  color: white;
-}
-
-/* Window title */
-#window {
-  color: #cdd6f4;
-}
-
-/* Clock */
+/* clock destaque */
 #clock {
-  background: #89b4fa;
-  color: #1e1e2e;
-  padding: 5px 12px;
-  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-/* Right modules */
-#cpu, #memory, #network, #pulseaudio, #battery, #custom-wifi, #custom-audio {
-  background: #1e1e2e;
-  padding: 5px 10px;
-  margin: 3px;
-  border-radius: 10px;
+/* spotify cor */
+#custom-spotify {
+  color: #1db954;
 }

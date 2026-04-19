@@ -1,0 +1,8 @@
+window {
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 12px;
+}
+
+#entry:selected {
+  background: #89b4fa;
+}

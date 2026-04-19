@@ -84,6 +84,7 @@ ln -sf "$REPO_ROOT/kitty/kitty.conf" "$CONFIG/kitty/kitty.conf"
 ln -sf "$REPO_ROOT/kitty/current-theme.conf" "$CONFIG/kitty/current-theme.conf"
 ln -sf "$REPO_ROOT/waybar/scripts/wifi.sh" "$CONFIG/waybar/scripts/wifi.sh"
 ln -sf "$REPO_ROOT/waybar/scripts/wifi-status.sh" "$CONFIG/waybar/scripts/wifi-status.sh"
+ln -sf "$REPO_ROOT/wofi/style.css" "$CONFIG/wofi/style.css"
 
 chmod +x "$CONFIG/waybar/scripts/wifi.sh"
 chmod +x "$CONFIG/waybar/scripts/wifi-status.sh"

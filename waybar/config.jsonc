@@ -2,96 +2,58 @@
   "layer": "top",
   "position": "top",
   "height": 36,
-  "spacing": 6,
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-right": 10,
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window"
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "pulseaudio",
+    "custom/spotify",
     "network",
-    // "cpu",
-    // "custom/wifi",
-    // "memory",
+    "pulseaudio",
+    "cpu",
+    "memory",
     "battery",
     "tray"
   ],
-  "hyprland/workspaces": {
-    "format": "{name}",
-    "persistent-workspaces": {
-      "*": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ]
-    }
-  },
-  "hyprland/window": {
-    "format": "{}",
-    "max-length": 40
-  },
   "clock": {
-    "format": "  {:%H:%M}",
+    "format": " {:%H:%M}",
     "tooltip-format": "{:%A, %d %B %Y}"
   },
-  // "cpu": {
-  //   "format": " {usage}%",
-  //   "interval": 2
-  // },
-  // "memory": {
-  //   "format": " {percentage}%",
-  //   "interval": 5
-  // },
   "network": {
-    "interval": 3,
-    "format-wifi": "  {essid}",
-    "format-ethernet": "󰈀 Conectado",
-    "format-disconnected": "⚠ Offline",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": "{ifname}",
-    "on-click": "nm-connection-editor",
-    "on-click-right": "~/.config/waybar/scripts/wifi.sh"
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 Cabo",
+    "format-disconnected": " Offline",
+    "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": " muted",
+    "format-muted": " Mutado",
     "format-icons": [
       "",
       "",
       ""
     ],
-    "on-click": "pavucontrol",
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    "on-click": "pavucontrol"
+  },
+  "cpu": {
+    "format": " {usage}%"
+  },
+  "memory": {
+    "format": " {percentage}%"
   },
   "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format": "{capacity}% ",
+    "format-charging": " {capacity}%"
   },
-  "tray": {
-    "spacing": 10
+  "custom/spotify": {
+    "exec": "~/.config/waybar/scripts/spotify.sh",
+    "interval": 2,
+    "format": " {}",
+    "on-click": "playerctl play-pause"
   }
-  // "custom/wifi": {
-  //   "exec": "~/.config/waybar/scripts/wifi-status.sh",
-  //   "interval": 3,
-  //   "format": "{}",
-  //   // "format": "  {ssid}",
-  //   "format-ethernet": "󰈀 Wired",
-  //   "format-disconnected": "⚠ Offline",
-  //   "on-click": "~/.config/waybar/scripts/wifi.sh",
-  //   "tooltip": false
-  // }
 }
