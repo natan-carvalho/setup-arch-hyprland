@@ -1,0 +1,19 @@
+show=drun
+prompt=Buscar...
+width=600
+height=400
+always_parse_args=true
+show_all=false
+print_command=true
+columns=4
+show=drun
+
+# Ícones ativados
+allow_images=true
+image_size=32
+
+# comportamento
+term=kitty
+location=center
+no_actions=true
+hide_scroll=true

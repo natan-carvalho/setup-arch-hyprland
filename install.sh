@@ -62,6 +62,8 @@ packages=(
   bluez-utils
   networkmanager
   nm-connection-editor
+  imagemagick
+  papirus-icon-theme
 )
 sudo systemctl enable --now NetworkManager
 # sudo pacman -Syu --needed "${packages[@]}"
@@ -85,6 +87,7 @@ ln -sf "$REPO_ROOT/kitty/current-theme.conf" "$CONFIG/kitty/current-theme.conf"
 ln -sf "$REPO_ROOT/waybar/scripts/wifi.sh" "$CONFIG/waybar/scripts/wifi.sh"
 ln -sf "$REPO_ROOT/waybar/scripts/wifi-status.sh" "$CONFIG/waybar/scripts/wifi-status.sh"
 ln -sf "$REPO_ROOT/wofi/style.css" "$CONFIG/wofi/style.css"
+ln -sf "$REPO_ROOT/wofi/config" "$CONFIG/wofi/config"
 
 chmod +x "$CONFIG/waybar/scripts/wifi.sh"
 chmod +x "$CONFIG/waybar/scripts/wifi-status.sh"
