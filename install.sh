@@ -67,6 +67,7 @@ packages=(
   mako
   hypridle
   hyprlock
+  ufw
 )
 sudo systemctl enable --now NetworkManager
 # sudo pacman -Syu --needed "${packages[@]}"
