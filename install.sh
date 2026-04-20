@@ -64,6 +64,9 @@ packages=(
   nm-connection-editor
   imagemagick
   papirus-icon-theme
+  mako
+  hypridle
+  hyprlock
 )
 sudo systemctl enable --now NetworkManager
 # sudo pacman -Syu --needed "${packages[@]}"
@@ -80,6 +83,8 @@ mkdir -p "$CONFIG/kitty"
 
 ln -sf "$REPO_ROOT/hypr/hyprpaper.conf" "$CONFIG/hypr/hyprpaper.conf"
 ln -sf "$REPO_ROOT/hypr/hyprland.conf" "$CONFIG/hypr/hyprland.conf"
+ln -sf "$REPO_ROOT/hypr/hypridle.conf" "$CONFIG/hypr/hypridle.conf"
+ln -sf "$REPO_ROOT/hypr/hyprlock.conf" "$CONFIG/hypr/hyprlock.conf"
 ln -sf "$REPO_ROOT/waybar/config.jsonc" "$CONFIG/waybar/config.jsonc"
 ln -sf "$REPO_ROOT/waybar/style.css" "$CONFIG/waybar/style.css"
 ln -sf "$REPO_ROOT/.zshrc" "$HOME/.zshrc"
