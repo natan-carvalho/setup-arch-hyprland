@@ -2,10 +2,12 @@
   font-family: JetBrainsMono Nerd Font;
   font-size: 13px;
   border: none;
+  margin: 0;
+  padding: 0;
 }
 
 window#waybar {
-  background: rgba(20, 20, 20, 0.6);
+  background: transparent;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
@@ -18,16 +20,20 @@ window#waybar {
 #cpu,
 #memory,
 #battery,
-#custom-spotify {
-  padding: 6px 12px;
-  margin: 4px;
+#custom-spotify,
+#tray {
+  padding: 6px 8px;
+  margin: 0 4px;
   border-radius: 10px;
-  background: rgba(40, 40, 40, 0.6);
+  background: rgba(40, 40, 40, 0.8);
   transition: all 0.25s ease;
 }
 
+#battery {
+  padding: 6px 12px;
+}
 /* hover animação */
-#workspaces button:hover,
+/* #workspaces button:hover, */
 #network:hover,
 #pulseaudio:hover,
 #cpu:hover,
@@ -38,10 +44,19 @@ window#waybar {
   /* transform: scale(1.05); */
 }
 
+#workspaces button:hover {
+  background: rgba(30, 30, 46, 0.8);
+}
+
+#workspaces button {
+  padding: 0 8px;
+}
+
 /* workspace ativo */
 #workspaces button.active {
   background: #89b4fa;
   color: #1e1e2e;
+  padding: 0 15px;
 }
 
 /* clock destaque */
