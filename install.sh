@@ -49,6 +49,13 @@ packages=(
   docker
   docker-compose
   ttf-jetbrains-mono-nerd
+  ttf-jetbrains-mono
+  ttf-dejavu
+  tt-liberation
+  ttf-font-awesome
+  noto-fonts
+  noto-fonts-emoji
+  noto-fonts-cjk
   visual-studio-code-bin
   adw-gtk-theme
   xdg-desktop-portal-hyprland
@@ -69,6 +76,9 @@ packages=(
   hyprlock
   ufw
 )
+
+fc-cache -fv
+
 sudo systemctl enable --now NetworkManager
 # sudo pacman -Syu --needed "${packages[@]}"
 yay -S --needed --noconfirm "${packages[@]}"

@@ -1,3 +1,9 @@
+# Presentation
+echo 
+fastfetch
+echo 
+
+
 # Binds
 bindkey "^[[3~" delete-char # Deleta o caractere
 bindkey "^[[H" beginning-of-line # Home para ir para o inicio da linha
