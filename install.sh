@@ -75,6 +75,9 @@ packages=(
   hypridle
   hyprlock
   ufw
+  tar
+  zip
+  unzip
 )
 
 fc-cache -fv
@@ -122,4 +125,14 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 
 chsh -s "$(command -v zsh)"
 
+echo ""
+read -p "Deseja configurar o sistema para jogos? (s/n): " gaming
+
+if [[ "$gaming" == "s" || "$gaming" == "S" ]]; then
+  echo "Instalando setup gamer..."
+  chmod +x "$REPO_ROOT/game.sh"
+  bash "$REPO_ROOT/game.sh"
+else
+  echo "Setup gamer ignorado."
+fi
 echo "Installation complete! Please restart your session to apply all changes and excute hyprland"
