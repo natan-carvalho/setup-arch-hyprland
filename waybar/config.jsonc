@@ -37,9 +37,10 @@
     "tooltip-format": "{:%A, %d %B %Y}"
   },
   "network": {
-    "format-wifi": " {essid}",
+    "format-wifi": "{icon} {essid}",
     "format-ethernet": "󰈀 Cabo",
     "format-disconnected": " Offline",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
