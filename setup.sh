@@ -1,11 +1,34 @@
+
+sudo pacman -Syu --noconfirm
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG=$HOME/.config
+
+if ! command -v git &> /dev/null; then
+  echo "Git could not be found. Please install Git and try again."
+  sudo pacman -S --noconfirm git
+fi
+
+sudo pacman -S --noconfirm base-devel
+
+if ! command -v yay &> /dev/null; then
+  echo "Yay could not be installed. Please check the installation process."
+  # instalar o yay
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  cd /tmp/yay
+  makepkg -si
+  cd ~
+fi
+
 PACKAGES=(
   plymouth
   git
-  
+  google-chrome
+
   # Video
   amd-ucode
   intel-ucode
-  intel-media-driver 
+  intel-media-driver
   #libva-mesa-driver
   mesa
   #nvidia
@@ -37,17 +60,25 @@ PACKAGES=(
 
   # Terminal
   kitty
-  
+
   # interface
   hyprland
 
   # tela de login
-  sddm 
+  sddm
+
+  # dev
+  visual-studio-code-bin
 )
 
-sudo pacman -S --noconfirm "${PACKAGES[@]}"
+yay -S --noconfirm "${PACKAGES[@]}"
 
-sudo systemctl enable bluetooth.service NetworkManager iwd sddm 
+sudo systemctl enable bluetooth.service NetworkManager iwd sddm
+
+# Linkagem
+rm -rf $CONFIG/hypr
+
+ln -sf $REPO_ROOT/.config/* $CONFIG/
 
 # adicionar o plymouth no ROOKS do arquivo /etc/mkinitcpio.conf
 # rodar sudo mkinitcpio -P
