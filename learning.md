@@ -1,0 +1,3 @@
+pacotes iniciais
+plymouth
+
