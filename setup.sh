@@ -21,6 +21,9 @@ if ! command -v yay &> /dev/null; then
 fi
 
 PACKAGES=(
+  # ===================
+  #        BASE
+  # ===================
   plymouth
   git
   google-chrome
@@ -67,7 +70,10 @@ PACKAGES=(
   # tela de login
   sddm
 
-  # dev
+
+  # ===================
+  #     DEVELOPMENT
+  # ===================
   visual-studio-code-bin
 )
 
@@ -76,9 +82,14 @@ yay -S --noconfirm "${PACKAGES[@]}"
 sudo systemctl enable bluetooth.service NetworkManager iwd sddm
 
 # Linkagem
-rm -rf $CONFIG/hypr
+#rm -rf $CONFIG/hypr
 
-ln -sf $REPO_ROOT/.config/* $CONFIG/
+# ln -sfn $REPO_ROOT/.config/* $CONFIG/
+for dir in $($REPO_ROOT/.config/*); do
+  name=$(basename $dir)
+  rm -rf $CONFIG/$name
+  ln -sfn $dir $CONFIG/$name
+done
 
 # adicionar o plymouth no ROOKS do arquivo /etc/mkinitcpio.conf
 # rodar sudo mkinitcpio -P
