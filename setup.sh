@@ -66,6 +66,8 @@ PACKAGES=(
 
   # interface
   hyprland
+  waybar
+  awww
 
   # tela de login
   sddm
