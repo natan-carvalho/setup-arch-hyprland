@@ -77,6 +77,13 @@ PACKAGES=(
   #     DEVELOPMENT
   # ===================
   visual-studio-code-bin
+  zsh
+  starship
+  fzf
+  asdf-vm
+  zsh-autosuggestions
+  zsh-autocomplete
+  zsh-syntax-highlighting
 )
 
 yay -S --noconfirm "${PACKAGES[@]}"
@@ -87,11 +94,15 @@ sudo systemctl enable bluetooth.service NetworkManager iwd sddm
 #rm -rf $CONFIG/hypr
 
 # ln -sfn $REPO_ROOT/.config/* $CONFIG/
+ln -sf $REPO_ROOT/.zshrc $HOME/.zshrc
 for dir in $($REPO_ROOT/.config/*); do
   name=$(basename $dir)
   rm -rf $CONFIG/$name
   ln -sfn $dir $CONFIG/$name
 done
+
+echo "Informe a Senha"
+chsh -s "$(command -v zsh)"
 
 # adicionar o plymouth no ROOKS do arquivo /etc/mkinitcpio.conf
 # rodar sudo mkinitcpio -P
