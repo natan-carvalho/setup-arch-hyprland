@@ -27,7 +27,6 @@ PACKAGES=(
   plymouth
   git
   google-chrome
-
   # Video
   amd-ucode
   intel-ucode
@@ -36,7 +35,6 @@ PACKAGES=(
   mesa
   #nvidia
   #nvidia-utils
-
   # Audio
   pipewire
   pipewire-alsa
@@ -44,12 +42,10 @@ PACKAGES=(
   pipewire-jack
   wireplumber
   pavucontrol
-
   # Bluetooth
   bluez
   bluez-utils
   blueman
-
   # Reproducao de videos e audio
   ffmpeg
   gstreamer
@@ -60,32 +56,27 @@ PACKAGES=(
   gst-plugins-ugly
   libdvdcss
   vlc
-
   # Terminal
   kitty
-
   # interface
   hyprland
   hyprpicker # pegar cores do tema
   waybar
   awww
-
   # tela de login
   sddm
-
   # Fonts
   ttf-jetbrains-mono
   ttf-jetbrains-mono-nerd
   ttf-dejavu
   ttf-liberation
   ttf-font-awesome
-
   # file manager
   dolphin
   dolphin-plugins
-
   # descompactador
   file-roller
+  rofi
 
   # ===================
   #     DEVELOPMENT
