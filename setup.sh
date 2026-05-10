@@ -72,6 +72,13 @@ PACKAGES=(
   # tela de login
   sddm
 
+  # Fonts
+  ttf-jetbrains-mono
+  ttf-jetbrains-mono-nerd
+  ttf-dejavu
+  ttf-liberation
+  ttf-font-awesome
+
 
   # ===================
   #     DEVELOPMENT
@@ -85,6 +92,8 @@ PACKAGES=(
   zsh-autocomplete
   zsh-syntax-highlighting
 )
+
+fc-cache -fv
 
 yay -S --noconfirm "${PACKAGES[@]}"
 
