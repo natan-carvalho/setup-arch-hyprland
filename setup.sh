@@ -115,3 +115,6 @@ chsh -s "$(command -v zsh)"
 
 # adicionar o plymouth no ROOKS do arquivo /etc/mkinitcpio.conf
 # rodar sudo mkinitcpio -P
+echo "╔═════════════════════════════════════════════════╗"
+echo "║                 Setup Concluído                 ║"
+echo "╚═════════════════════════════════════════════════╝"
