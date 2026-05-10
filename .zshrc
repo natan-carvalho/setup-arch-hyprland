@@ -3,6 +3,16 @@ echo
 fastfetch
 echo
 
+# --- History Configuration ---
+HISTFILE=~/.cache/.zsh_history    # Location of the history file
+HISTSIZE=100000            # Max lines in memory
+SAVEHIST=100000            # Max lines in the file
+setopt SHARE_HISTORY       # Share history between sessions
+setopt APPEND_HISTORY      # Append to history file, don't replace it
+setopt INC_APPEND_HISTORY  # Add commands immediately to history file
+setopt HIST_IGNORE_SPACE   # Don't record commands starting with space
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicates first
+
 export LANG=pt_BR.UTF-8
 # Binds
 bindkey "^[[3~" delete-char # Deleta o caractere
