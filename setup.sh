@@ -1,22 +1,24 @@
-
+echo "╔═════════════════════════════════════════════════╗"
+echo "║                Iniciando o Setup                ║"
+echo "╚═════════════════════════════════════════════════╝"
 sudo pacman -Syu --noconfirm
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG=$HOME/.config
+CONFIG="$HOME/.config"
 
-if ! command -v git &> /dev/null; then
+if ! command -v git &>/dev/null; then
   echo "Git could not be found. Please install Git and try again."
   sudo pacman -S --noconfirm git
 fi
 
 sudo pacman -S --noconfirm base-devel
 
-if ! command -v yay &> /dev/null; then
+if ! command -v yay &>/dev/null; then
   echo "Yay could not be installed. Please check the installation process."
   # instalar o yay
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   cd /tmp/yay
-  makepkg -si
+  makepkg -si --noconfirm
   cd ~
 fi
 
@@ -91,8 +93,6 @@ PACKAGES=(
   zsh-syntax-highlighting
 )
 
-fc-cache -fv
-
 yay -S --noconfirm "${PACKAGES[@]}"
 
 sudo systemctl enable bluetooth.service NetworkManager iwd sddm
@@ -102,12 +102,14 @@ sudo systemctl enable bluetooth.service NetworkManager iwd sddm
 
 # ln -sfn $REPO_ROOT/.config/* $CONFIG/
 ln -sf $REPO_ROOT/.zshrc $HOME/.zshrc
-for dir in $($REPO_ROOT/.config/*); do
+for dir in $REPO_ROOT/.config/*; do
   name=$(basename $dir)
   rm -rf $CONFIG/$name
+  echo Diretorio de teste $dir
   ln -sfn $dir $CONFIG/$name
 done
 
+fc-cache -fv
 echo "Informe a Senha"
 chsh -s "$(command -v zsh)"
 
