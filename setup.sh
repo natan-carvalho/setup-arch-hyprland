@@ -66,6 +66,7 @@ PACKAGES=(
 
   # interface
   hyprland
+  hyprpicker # pegar cores do tema
   waybar
   awww
 
