@@ -79,6 +79,12 @@ PACKAGES=(
   ttf-liberation
   ttf-font-awesome
 
+  # file manager
+  dolphin
+  dolphin-plugins
+
+  # descompactador
+  file-roller
 
   # ===================
   #     DEVELOPMENT
