@@ -115,7 +115,32 @@ PACKAGES=(
   zsh-syntax-highlighting
 )
 
-yay -S --noconfirm "${PACKAGES[@]}"
+# Função para verificar se o pacote é do pacman
+is_pacman_package() {
+  pacman -Ss "^$1$" >/dev/null 2>&1
+}
+
+# Separar pacotes
+PACMAN_PACKAGES=()
+AUR_PACKAGES=()
+
+for pkg in "${PACKAGES[@]}"; do
+  if is_pacman_package "$pkg"; then
+    PACMAN_PACKAGES+=("$pkg")
+  else
+    AUR_PACKAGES+=("$pkg")
+  fi
+done
+
+# Instalar pacotes do pacman
+if [ ${#PACMAN_PACKAGES[@]} -gt 0 ]; then
+  sudo pacman -S --noconfirm "${PACMAN_PACKAGES[@]}"
+fi
+
+# Instalar pacotes do AUR
+if [ ${#AUR_PACKAGES[@]} -gt 0 ]; then
+  yay -S --noconfirm "${AUR_PACKAGES[@]}"
+fi
 
 sudo systemctl enable bluetooth.service NetworkManager iwd sddm
 
