@@ -79,6 +79,28 @@ PACKAGES=(
   # descompactador
   file-roller
   rofi
+  polkit-kde-agent
+  file-roller
+  gvfs-smb
+  gvfs
+  gvfs-mtp
+  gnome-keyring
+  # integração
+  xdg-desktop-portal
+  xdg-desktop-portal-hyprland
+  xdg-desktop-portal-gtk
+  xdg-user-dirs-gtk
+  xdg-user-dirs
+  xdg-utils
+  nwg-look
+  qt5ct-kde
+  qt6ct-kde
+  qt5-wayland
+  qt6-wayland
+  kvantum
+  kvantum-qt5
+  papirus-icon-theme
+  papirus-folders
 
   # ===================
   #     DEVELOPMENT
