@@ -23,9 +23,9 @@ if ! command -v yay &>/dev/null; then
 fi
 
 PACKAGES=(
-  # ===================
-  #        BASE
-  # ===================
+  # ╔════════════════╗
+  # ║      BASE      ║
+  # ╚════════════════╝
   plymouth
   git
   google-chrome
@@ -102,9 +102,9 @@ PACKAGES=(
   papirus-icon-theme
   papirus-folders
 
-  # ===================
-  #     DEVELOPMENT
-  # ===================
+  # ╔════════════════╗
+  # ║   DEVELOPMENT  ║
+  # ╚════════════════╝
   visual-studio-code-bin
   zsh
   starship

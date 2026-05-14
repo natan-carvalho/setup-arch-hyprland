@@ -66,8 +66,40 @@
             "format": " {usage}%"
         },
         "battery": {
-            "format": "{capacity}% ",
-            "format-charging": " {capacity}%"
+            "format": "{capacity}% {icon}",
+            "format-charging": " {capacity}%",
+            "format-icons": {
+                "default": [
+                    "󰂎",
+                    "󰁺",
+                    "󰁻",
+                    "󰁼",
+                    "󰁽",
+                    "󰁾",
+                    "󰁿",
+                    "󰂀",
+                    "󰂁",
+                    "󰂂",
+                    "󰁹"
+                ],
+                "charging": [
+                    "󰢟",
+                    "󰢜",
+                    "󰂆",
+                    "󰂇",
+                    "󰂈",
+                    "󰢝",
+                    "󰂉",
+                    "󰢞",
+                    "󰂊",
+                    "󰂋",
+                    "󰂅"
+                ]
+            },
+            "states": {
+                "warning": 20,
+                "critical": 15
+            }
         },
         "custom/power": {
             "format": "⏻ ",
