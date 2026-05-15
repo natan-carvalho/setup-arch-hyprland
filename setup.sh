@@ -67,6 +67,8 @@ PACKAGES=(
   awww
   # tela de login
   sddm
+  hyprlock
+  hypridle
   # Fonts
   ttf-jetbrains-mono
   ttf-jetbrains-mono-nerd
