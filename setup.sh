@@ -72,6 +72,7 @@ PACKAGES=(
   qt6-multimedia-ffmpeg
   hyprlock
   hypridle
+  wlogout
   # Fonts
   ttf-jetbrains-mono
   ttf-jetbrains-mono-nerd
