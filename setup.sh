@@ -67,6 +67,9 @@ PACKAGES=(
   awww
   # tela de login
   sddm
+  qt6-svg
+  qt6-virtualkeyboard
+  qt6-multimedia-ffmpeg
   hyprlock
   hypridle
   # Fonts
@@ -146,6 +149,19 @@ fi
 
 sudo systemctl enable bluetooth.service NetworkManager iwd sddm
 
+
+# SDDM Theme
+sudo git clone -b master --depth 1 https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
+sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
+
+for dir in $REPO_ROOT/etc/*; do
+  name=$(basename $dir)
+  echo "Criando o diretorio de teste $dir"
+  sudo rm -rf /etc/$name
+  sudo ln -sfn $dir /etc/$name
+done
+
+sudo ln -sfn $REPO_ROOT/usr/share/sddm/theme/metatadata.desktop /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
 # Linkagem
 #rm -rf $CONFIG/hypr
 
