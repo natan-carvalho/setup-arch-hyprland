@@ -1,0 +1,79 @@
+# =========================
+# MAKO CONFIG
+# =========================
+
+# Fonte
+font=JetBrainsMono Nerd Font 11
+
+# Tamanho
+width=350
+height=120
+
+# Posição
+anchor=top-right
+margin=15,15,15,15
+
+# Visual
+background-color=#1e1e2eee
+text-color=#ffffff
+border-color=#89b4faee
+
+border-size=2
+border-radius=12
+
+# Padding interno
+padding=14
+
+# Ícones
+icons=1
+max-icon-size=48
+icon-path=/usr/share/icons/Papirus-Dark
+
+# Tempo
+default-timeout=5000
+ignore-timeout=0
+
+# Agrupamento
+group-by=summary
+max-visible=5
+
+# Progresso (volume/brilho)
+progress-color=over #89b4fa
+
+# Texto
+markup=1
+actions=1
+
+# Transparência
+outer-margin=10
+
+# Blur no Hyprland
+layer=overlay
+
+# Mouse
+on-button-left=invoke-default-action
+on-button-right=dismiss
+on-button-middle=dismiss-group
+
+# Histórico
+history=1
+
+# Formato
+format=<b>%s</b>\n%b
+
+# Esconde apps silenciosos
+sort=-time
+
+# =========================
+# APP SPECIFIC
+# =========================
+
+[app-name="Spotify"]
+default-timeout=3000
+
+[app-name="discord"]
+default-timeout=6000
+
+[urgency=high]
+border-color=#f38ba8
+default-timeout=0

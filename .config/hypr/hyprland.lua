@@ -17,7 +17,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
   output   = "eDP-1",
-  mode     = "1336x768@60",
+  mode     = "1366x768@60",
   position = "0x0",
   scale    = 1,
 })
@@ -48,6 +48,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("waybar")
+  hl.exec_cmd("mako")
   hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
 end)

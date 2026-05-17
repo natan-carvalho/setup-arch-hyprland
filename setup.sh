@@ -113,6 +113,8 @@ PACKAGES=(
   kvantum-qt5
   papirus-icon-theme
   papirus-folders
+  # notificações
+  mako
 
   # ╔════════════════╗
   # ║   DEVELOPMENT  ║
