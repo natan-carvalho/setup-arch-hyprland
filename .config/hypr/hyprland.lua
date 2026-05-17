@@ -19,7 +19,7 @@ hl.monitor({
   output   = "eDP-1",
   mode     = "1336x768@60",
   position = "0x0",
-  scale    = "1",
+  scale    = 1,
 })
 
 
@@ -244,6 +244,8 @@ hl.config({
 
     sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 
+    numlock_by_default = true,
+
     touchpad = {
       natural_scroll = false,
     },
@@ -280,6 +282,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+-- hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/rofi/powermenu/type-6/powermenu.sh"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
@@ -382,6 +385,13 @@ hl.window_rule({
 hl.window_rule({
   name = "Controle de volume",
   match = { class = "org.pulseaudio.pavucontrol" },
+
+  float = true,
+})
+
+hl.window_rule({
+  name = "Conexões de rede",
+  match = { class = "nm-connection-editor" },
 
   float = true,
 })

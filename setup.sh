@@ -79,6 +79,12 @@ PACKAGES=(
   ttf-dejavu
   ttf-liberation
   ttf-font-awesome
+  nerd-fonts-meta
+  noto-fonts
+  noto-fonts-cjk
+  noto-fonts-emoji
+  ttf-firacode-nerd
+  otf-font-awesome
   # file manager
   dolphin
   dolphin-plugins
