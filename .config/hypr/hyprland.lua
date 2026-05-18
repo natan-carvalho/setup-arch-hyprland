@@ -49,6 +49,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("hypridle")
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
+  hl.exec_cmd("blueman-applet")
   hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
 end)
@@ -395,4 +396,13 @@ hl.window_rule({
   match = { class = "nm-connection-editor" },
 
   float = true,
+})
+
+hl.window_rule({
+  name = "Rofi",
+  match = { class = "rofi" },
+
+  opacity = "0.95 0.95",
+  blur = yes,
+  rounding = 10,
 })

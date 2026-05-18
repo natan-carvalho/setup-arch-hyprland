@@ -1,0 +1,82 @@
+configuration {
+  font: "JetBrainsMono Nerd Font 10";
+  show-icons: true;
+}
+
+* {
+  bg-col:      #1e1e2e;
+  bg-col-light: #313244;
+  border-col:  #89b4fa;
+  selected-col: #45475a;
+  fg-col:      #cdd6f4;
+  fg-col2:     #f38ba8;
+  grey:        #6c7086;
+
+  width: 600;
+}
+
+window {
+  height: 400;
+  border: 2px;
+  border-radius: 10px;
+  border-color: var(border-col,8%);
+  background-color: var(bg-col,55%);
+}
+
+mainbox {
+  background-color: @bg-col;
+  children: [ inputbar, listview ];
+}
+
+prompt {
+  background-color: @border-col;
+  padding: 6px;
+  text-color: @bg-col;
+  border-radius: 5px;
+  margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+}
+
+entry {
+  padding: 6px;
+  margin: 20px 0px 0px 10px;
+  text-color: @fg-col;
+  background-color: @bg-col-light;
+  border-radius: 5px;
+}
+
+listview {
+  border: 0px 0px 0px;
+  padding: 6px 0px 0px;
+  margin: 10px 20px 20px 20px;
+  columns: 1;
+  lines: 8;
+  background-color: @bg-col;
+}
+
+element {
+  padding: 5px;
+  background-color: @bg-col;
+  text-color: @fg-col;
+  border-radius: 5px;
+}
+
+element selected {
+  background-color: @selected-col;
+  text-color: @border-col;
+  border: 0px 0px 0px 5px;
+  border-color: @border-col;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+element-icon {
+  background-color: inherit;
+}

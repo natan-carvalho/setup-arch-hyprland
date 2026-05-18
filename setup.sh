@@ -91,6 +91,7 @@ PACKAGES=(
   # descompactador
   file-roller
   rofi
+  rofi-wayland
   polkit-kde-agent
   file-roller
   gvfs-smb
@@ -182,6 +183,9 @@ for dir in $REPO_ROOT/.config/*; do
   echo Diretorio de teste $dir
   ln -sfn $dir $CONFIG/$name
 done
+
+# dar permissão de execução para os scripts
+chmod +x $REPO_ROOT/.config/waybar/scripts/*
 
 fc-cache -fv
 echo "Informe a Senha"
