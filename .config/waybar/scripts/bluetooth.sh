@@ -98,7 +98,6 @@ menu() {
   case "$CHOICE" in
     *Ligar/Desligar*)
       toggle_power
-      exit 0
       ;;
     *Escanear*)
       DEVICES=$(scan_devices)
